@@ -41,6 +41,12 @@ int do_semop(message *);
 int is_sem_nil(void);
 int is_shm_nil(void);
 void sem_process_vm_notify(void);
+int do_rwsemget(message *);
+int do_rwsemdel(message *);
+int do_read_lock(message *);
+int do_read_unlock(message *);
+int do_write_lock(message *);
+int do_write_unlock(message *);
 
 EXTERN int identifier;
 EXTERN endpoint_t who_e;

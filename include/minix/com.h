@@ -1128,6 +1128,18 @@
 #	define SEMOP_OPS	m2_l1
 #	define SEMOP_SIZE	m2_i2
 
+/* Readers-writer semaphore */
+#define IPC_RWSEMGET     (IPC_BASE+8)
+#   define RWSEMGET_KEY   m2_l1
+#   define RWSEMGET_RETID m2_i1
+
+#define IPC_RWSEMDEL     (IPC_BASE+9)
+#define IPC_READ_LOCK    (IPC_BASE+10)
+#define IPC_READ_UNLOCK  (IPC_BASE+11)
+#define IPC_WRITE_LOCK   (IPC_BASE+12)
+#define IPC_WRITE_UNLOCK (IPC_BASE+13)
+#   define RWSEM_ID       m2_i1
+
 /*===========================================================================*
  *                Messages for Scheduling				     *
  *===========================================================================*/

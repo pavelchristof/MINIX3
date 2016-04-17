@@ -10,13 +10,19 @@ static struct {
 	int (*func)(message *);
 	int reply;	/* whether the reply action is passed through */
 } ipc_calls[] = {
-	{ IPC_SHMGET,	do_shmget,	0 },
-	{ IPC_SHMAT,	do_shmat,	0 },
-	{ IPC_SHMDT,	do_shmdt,	0 },
-	{ IPC_SHMCTL,	do_shmctl,	0 },
-	{ IPC_SEMGET,	do_semget,	0 },
-	{ IPC_SEMCTL,	do_semctl,	0 },
-	{ IPC_SEMOP,	do_semop,	1 },
+	{ IPC_SHMGET,       do_shmget,       0 },
+	{ IPC_SHMAT,        do_shmat,        0 },
+	{ IPC_SHMDT,        do_shmdt,        0 },
+	{ IPC_SHMCTL,       do_shmctl,       0 },
+	{ IPC_SEMGET,       do_semget,       0 },
+	{ IPC_SEMCTL,       do_semctl,       0 },
+	{ IPC_SEMOP,        do_semop,        1 },
+	{ IPC_RWSEMGET,     do_rwsemget,     0 },
+	{ IPC_RWSEMDEL,     do_rwsemdel,     0 },
+	{ IPC_READ_LOCK,    do_read_lock,    1 },
+	{ IPC_READ_UNLOCK,  do_read_unlock,  0 },
+	{ IPC_WRITE_LOCK,   do_write_lock,   1 },
+	{ IPC_WRITE_UNLOCK, do_write_unlock, 0 },
 };
 
 #define SIZE(a) (sizeof(a)/sizeof(a[0]))
